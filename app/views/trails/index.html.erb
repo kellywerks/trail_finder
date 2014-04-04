@@ -4,8 +4,7 @@
 
 <ul>
   <% @trails.each do |trail| %>
-    <li><a href="/trails/<%= trail.slug %>"><%= trail.name %></a>
-    </li>
+    <li><a href="/trails/<%= trail.slug %>"><%= trail.name %></a></li>
   <% end %>
 </ul>
 
@@ -15,6 +14,15 @@
 <form action="/trails/<%= @trail.slug %>" method="post">
   <%= render("form") %>
   </br>
+  <select name="trail[location_id]">
+      <option selected="selected">Select a location</option>
+    <% @locations.each do |location| %>
+      <option value="<%= location.id %>"><%= location.city %>, <%= location.state %></option>
+    <% end %>
+  </select>
+  <a href="/locations">Add a new location</a>
+  <br>
+  <br>
   <button>Create Trail</button>
 </form>
 

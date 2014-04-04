@@ -1,4 +1,5 @@
 class Location < ActiveRecord::Base
   has_many :trails
-  validates :name, presence: true
+  validates :city, presence: true
+  validates :state, presence: true
 end

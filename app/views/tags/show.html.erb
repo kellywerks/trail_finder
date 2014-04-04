@@ -1,0 +1,16 @@
+<% content_for(:title, "Tag | TrailFinder") %>
+
+<h1>Trails Tagged <%= @tag.name.capitalize %>:</h1>
+
+<ul>
+<% @tag.trails.each do |trail| %>
+  <li><a href="/trails/<%= trail.slug %>"><%= trail.name %></a></li>
+<% end %>
+</ul>
+
+<p><a href="/tags/<%= @tag.slug %>/edit">Edit</a></p>
+<p><a href="/tags/<%= @tag.slug %>"
+      data-confirm="Seriously?!"
+      data-method="delete"
+      rel="nofollow">Delete</a>
+<p><a href="/trails">Return to the homepage</a></p>

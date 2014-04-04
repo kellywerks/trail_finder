@@ -5,3 +5,11 @@
 </br>
 <textarea rows="8" cols="60" id="trail_description" name="trail[description]" type="text"><%= @trail.description %></textarea>
 </br>
+<a href="/tags">Add a new tag</a>
+</br>
+<% @tags.each_with_index do |tag, index| %>
+  <input name="tag[<%= index %>]" type="checkbox" value="<%= tag.name %>"><%= tag.name %><br>
+<% end %>
+</br>
+
+

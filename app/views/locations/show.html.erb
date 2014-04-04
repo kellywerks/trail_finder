@@ -1,0 +1,10 @@
+<% content_for(:title, "Location | TrailFinder") %>
+
+<h1><%= @location.city %>, <%= @location.state %></h1>
+
+<p><a href="/locations/<%= @location.slug %>/edit">Edit</a></p>
+<p><a href="/locations/<%= @location.slug %>"
+      data-confirm="Seriously?!"
+      data-method="delete"
+      rel="nofollow">Delete</a>
+<p><a href="/trails">Return to the homepage</a></p>

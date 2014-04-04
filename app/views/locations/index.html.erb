@@ -1,0 +1,18 @@
+<% content_for(:title, "All Locations | TrailFinder") %>
+
+<h1>Trail Locations</h1>
+
+<ul>
+  <% @locations.each do |location| %>
+    <li><a href="locations/<%= location.slug %>"><%= location.city %>, <%= location.state %></a></li>
+  <% end %>
+</ul>
+
+<h2>Add a Location</h2>
+<%= render("layouts/errors", object: @location) %>
+
+<form action="/locations/<%= @location.slug %>" method="post">
+  <%= render("form") %>
+  </br>
+  <button>Create Location</button>
+</form>

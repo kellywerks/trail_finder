@@ -4,6 +4,18 @@
 
 <p><%= simple_format(@trail.description) %></p>
 
+<% if @trail.tags.count != 0 %>
+  <p><strong>Tags:</strong> <% @trail.tags.each do |tag| %>
+    <a href="/tags/<%= tag.slug %>"><%= tag.name %></a>
+  <% end %></p>
+<% end %>
+
+
+<p><strong>Location:</strong>
+  <a href="/locations/<%= @trail.location.slug %>"><%= @trail.location.city %>, <%= @trail.location.state %></a>
+</p>
+
+
 <p><a href="/trails/<%= @trail.slug %>/edit">Edit</a></p>
 <p><a href="/trails/<%= @trail.slug %>"
       data-confirm="Seriously?!"

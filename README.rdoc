@@ -1,6 +1,6 @@
 #Trail Finder
 
-*As a contributing hiker, I want to enter new trails, so that I can share them with others.
+*[Completed]As a contributing hiker, I want to enter new trails, so that I can share them with others.
 *As a contributing hiker, I want to tag my trails, so they are easier to find.
 *As a hiker, I want to be able to pick a trail by location.
 *As a hiker, I want to be able to rate and review trails. --use Turbolinks

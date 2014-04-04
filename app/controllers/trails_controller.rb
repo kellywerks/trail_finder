@@ -2,11 +2,17 @@ class TrailsController < ApplicationController
   def index
     @trails = Trail.all
     @trail = Trail.new
+    @locations = Location.all
+    @tags = Tag.all
     render("trails/index.html.erb")
   end
 
   def create
     @trail = Trail.new(params[:trail])
+    @tags = Tag.all
+    @all_tags = []
+    params[:tag].each { |key, value| @all_tags << Tag.find_by(name: value) }
+    @all_tags.each { |tag| @trail.tags << tag }
     if @trail.save
       params[:trail][:slug] = ("#{@trail.id}-#{@trail.name}").parameterize
       @trail.update(params[:trail])
@@ -25,6 +31,7 @@ class TrailsController < ApplicationController
 
   def edit
     @trail = Trail.find_by(slug: params[:trail_slug])
+    @locations = Location.all
     render("trails/edit.html.erb")
   end
 

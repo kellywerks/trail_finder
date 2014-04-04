@@ -5,7 +5,16 @@
 
 <form action="/trails/<%= @trail.slug %>" method="post">
   <input name="_method" type="hidden" value="patch">
-  <%= render("form") %>
+ <%= render("form") %>
   </br>
+  <select name="trail[location_id]">
+      <option value="<%= @trail.location.id %>" selected="selected"><%= @trail.location.city %>, <%= @trail.location.state %></option>
+    <% @locations.each do |location| %>
+      <option value="<%= location.id %>"><%= location.city %>, <%= location.state %></option>
+    <% end %>
+  </select>
+  <a href="/locations">Add a new location</a>
+  <br>
+  <br>
   <button>Update Trail</button>
 </form>
