@@ -1,0 +1,12 @@
+<% content_for(:title, "#{@trail.name} | TrailFinder") %>
+
+<h1><%= @trail.name %></h1>
+
+<p><%= simple_format(@trail.description) %></p>
+
+<p><a href="/trails/<%= @trail.slug %>/edit">Edit</a></p>
+<p><a href="/trails/<%= @trail.slug %>"
+      data-confirm="Seriously?!"
+      data-method="delete"
+      rel="nofollow">Delete</a>
+<p><a href="/trails">Return to the homepage</a></p>

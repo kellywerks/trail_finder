@@ -1,0 +1,20 @@
+<% content_for(:title, "All Trails | TrailFinder") %>
+
+<h1>Trail Finder</h1>
+
+<ul>
+  <% @trails.each do |trail| %>
+    <li><a href="/trails/<%= trail.slug %>"><%= trail.name %></a>
+    </li>
+  <% end %>
+</ul>
+
+<h2>Add a Trail</h2>
+<%= render("layouts/errors", object: @trail) %>
+
+<form action="/trails/<%= @trail.slug %>" method="post">
+  <%= render("form") %>
+  </br>
+  <button>Create Trail</button>
+</form>
+
