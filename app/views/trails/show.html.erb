@@ -1,12 +1,13 @@
 <% content_for(:title, "#{@trail.name} | TrailFinder") %>
 
-<h1><%= @trail.name %></h1>
+<h1 class="jumbotron"><%= @trail.name %></h1>
 
 <p><%= simple_format(@trail.description) %></p>
 
 <% if @trail.tags.count != 0 %>
-  <p><strong>Tags:</strong> <% @trail.tags.each do |tag| %>
+  <p><strong>Tags:</br></strong> <% @trail.tags.each do |tag| %>
     <a href="/tags/<%= tag.slug %>"><%= tag.name %></a>
+    </br>
   <% end %></p>
 <% end %>
 

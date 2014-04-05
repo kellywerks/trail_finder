@@ -1,6 +1,6 @@
 <% content_for(:title, "Edit Tag | TrailFinder") %>
 
-<h2>Edit <%= @tag.name %></h2>
+<h2 class="jumbotron">Edit <%= @tag.name %></h2>
 <%= render("layouts/errors", object: @tag) %>
 
 <form action="/tags/<%= @tag.slug %>" method="post">

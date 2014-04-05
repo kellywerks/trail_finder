@@ -1,6 +1,6 @@
 <% content_for(:title, "Location | TrailFinder") %>
 
-<h1><%= @location.city %>, <%= @location.state %></h1>
+<h1 class="jumbotron"><%= @location.city %>, <%= @location.state %></h1>
 
 <p><a href="/locations/<%= @location.slug %>/edit">Edit</a></p>
 <p><a href="/locations/<%= @location.slug %>"

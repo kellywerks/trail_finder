@@ -1,6 +1,6 @@
 <% content_for(:title, "Tag | TrailFinder") %>
 
-<h1>Trails Tagged <%= @tag.name.capitalize %>:</h1>
+<h1 class="jumbotron"><%= @tag.name.titlecase %> Trails</h1>
 
 <ul>
 <% @tag.trails.each do |trail| %>

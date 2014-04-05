@@ -1,6 +1,6 @@
 <% content_for(:title, "Edit Location | TrailFinder") %>
 
-<h2>Edit <%= @location.city %>, <%= @location.state %></h2>
+<h2 class="jumbotron">Edit <%= @location.city %>, <%= @location.state %></h2>
 <%= render("layouts/errors", object: @location) %>
 
 <form action="/locations/<%= @location.slug %>" method="post">

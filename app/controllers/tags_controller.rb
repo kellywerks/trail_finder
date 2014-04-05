@@ -11,7 +11,7 @@ class TagsController < ApplicationController
       params[:tag][:slug] = ("#{@tag.id}-#{@tag.name}").parameterize
       @tag.update(params[:tag])
       flash[:notice] = "Your tag was added to TrailFinder."
-      redirect_to("/tags")
+      redirect_to("/tags/#{@tag.slug}")
     else
       flash[:alert] = "Try again, sucka!"
       redirect_to("/tags")

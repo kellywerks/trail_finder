@@ -1,10 +1,10 @@
 <% content_for(:title, "All Tags | TrailFinder") %>
 
-<h1>Trail Tags</h1>
+<h1 class="jumbotron">Trail Tags</h1>
 
 <ul>
   <% @tags.each do |tag| %>
-    <li><a href="tags/<%= tag.slug %>"><%= tag.name %></a></li>
+    <li><a href="tags/<%= tag.slug %>"><%= tag.name.downcase %></a></li>
   <% end %>
 </ul>
 
